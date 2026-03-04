@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Diário - Google Sheets</title>
+    <!-- Link para o arquivo CSS externo para estilização -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle Diário</h1>
+
+        <form id="dataForm">
+            <h2>Adicionar Registro</h2>
+            <div class="input-group">
+                <label for="dia">Dia:</label>
+                <input type="date" id="dia" name="dia" required>
+            </div>
+            <div class="input-group">
+                <label for="saida">Saída:</label>
+                <input type="number" id="saida" name="saida" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="estoque">Estoque:</label>
+                <input type="number" id="estoque" name="estoque" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="vendedor">Vendedor:</label>
+                <input type="text" id="vendedor" name="vendedor" required>
+            </div>
+            <button type="submit">Enviar para Google Sheets</button>
+        </form>
+
+        <hr>
+
+        <h2>Últimos Registros (10 linhas)</h2>
+        <div id="loadingMessage" class="loading">Carregando dados...</div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Saída</th>
+                    <th>Estoque</th>
+                    <th>Vendedor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas serão inseridas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="js/script.js"></script>
+</body>
+</html>
